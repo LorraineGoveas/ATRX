@@ -38,7 +38,7 @@ Abigail:
 
 #### APIs
 - Google Places
-- Google Maps
+- Google Maps/Apple Maps
 - Firebase
 - Yelp 
 
