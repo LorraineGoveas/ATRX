@@ -1,0 +1,6 @@
+framework module Pods_CSC690Final {
+  umbrella header "Pods-CSC690Final-umbrella.h"
+
+  export *
+  module * { export * }
+}
