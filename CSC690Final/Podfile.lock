@@ -37,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - Firebase/Auth
+  - Firebase/Core
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -59,6 +60,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
 
-PODFILE CHECKSUM: 95d0ef27a4155889ec4eacf62524bdf85682a8df
+PODFILE CHECKSUM: 7c4d7bc7e42ffd4c5160f398bad41147214dc0c4
 
 COCOAPODS: 1.5.0
