@@ -15,6 +15,7 @@
 		F30D81C920702827004A6494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30D81C720702827004A6494 /* LaunchScreen.storyboard */; };
 		F30D81D420702827004A6494 /* CSC690FinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81D320702827004A6494 /* CSC690FinalTests.swift */; };
 		F30D81DF20702828004A6494 /* CSC690FinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81DE20702828004A6494 /* CSC690FinalUITests.swift */; };
+		F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		F30D81DA20702827004A6494 /* CSC690FinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSC690FinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30D81DE20702828004A6494 /* CSC690FinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSC690FinalUITests.swift; sourceTree = "<group>"; };
 		F30D81E020702828004A6494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				F30D81BC20702827004A6494 /* AppDelegate.swift */,
 				F30D81BE20702827004A6494 /* MasterViewController.swift */,
 				F30D81C020702827004A6494 /* DetailViewController.swift */,
+				F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */,
 				F30D81C220702827004A6494 /* Main.storyboard */,
 				F30D81C520702827004A6494 /* Assets.xcassets */,
 				F30D81C720702827004A6494 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				F30D81C120702827004A6494 /* DetailViewController.swift in Sources */,
 				F30D81BF20702827004A6494 /* MasterViewController.swift in Sources */,
 				F30D81BD20702827004A6494 /* AppDelegate.swift in Sources */,
+				F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
