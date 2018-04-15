@@ -13,6 +13,7 @@ iOS app for attractions to see in a city.
 ## Wireframes
 
 <img src="assets/wireframes.png" width="600" height="400" />
+<img src = "assets/atrxwireframe1.png"/>
 
 
 ## Features
