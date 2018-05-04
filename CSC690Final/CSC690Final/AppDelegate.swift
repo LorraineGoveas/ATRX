@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuthUI
 import GooglePlaces
 
 @UIApplicationMain
@@ -23,11 +24,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
         FirebaseApp.configure();
-        
+        let authUI = FUIAuth.defaultAuthUI()
+        authUI?.delegate = self as? FUIAuthDelegate
+        let authViewController = authUI!.authViewController()
+
         GMSPlacesClient.provideAPIKey("AIzaSyDegWVwOdgfvZJ5Y3naNhq_2b9NEIr7BNo")
         return true
     }
 
+    func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        // handle user and error as necessary
+    }
+    
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
