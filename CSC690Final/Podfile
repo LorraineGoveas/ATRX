@@ -6,6 +6,9 @@ target 'CSC690Final' do
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+  pod 'GoogleMaps'
   
   # Pods for CSC690Final
 
