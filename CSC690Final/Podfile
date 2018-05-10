@@ -10,7 +10,7 @@ target 'CSC690Final' do
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
-  
+  pod 'Alamofire'  
   
   # Pods for CSC690Final
 

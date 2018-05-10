@@ -34,16 +34,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="DkZ-Ut-Svd">
-                                <rect key="frame" x="72" y="306" width="231" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="P4o-jt-hRT">
+                                <rect key="frame" x="110.5" y="254.5" width="154" height="158"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="ATRX" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jrP-OH-hLB">
+                                        <rect key="frame" x="0.0" y="0.0" width="154" height="59"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="43"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjT-Pi-efw">
+                                        <rect key="frame" x="0.0" y="69" width="154" height="46"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Search a City" image="button_my_location.png"/>
+                                        <connections>
+                                            <action selector="gpaButton:" destination="slB-1X-WpD" eventType="touchUpInside" id="z4u-1a-01z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFC-RG-K9L">
+                                        <rect key="frame" x="0.0" y="125" width="154" height="33"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButton:" destination="slB-1X-WpD" eventType="touchUpInside" id="wsj-gF-PZP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="DkZ-Ut-Svd" firstAttribute="centerY" secondItem="X3r-fe-E6C" secondAttribute="centerY" id="5b7-ub-qal"/>
-                            <constraint firstItem="DkZ-Ut-Svd" firstAttribute="leading" secondItem="HA1-o3-3kg" secondAttribute="leading" constant="72" id="meY-rK-QjT"/>
-                            <constraint firstItem="DkZ-Ut-Svd" firstAttribute="centerX" secondItem="X3r-fe-E6C" secondAttribute="centerX" id="yKC-9H-10M"/>
+                            <constraint firstItem="P4o-jt-hRT" firstAttribute="centerX" secondItem="X3r-fe-E6C" secondAttribute="centerX" id="c2i-sH-m76"/>
+                            <constraint firstItem="P4o-jt-hRT" firstAttribute="centerY" secondItem="X3r-fe-E6C" secondAttribute="centerY" id="lqp-5E-fTM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HA1-o3-3kg"/>
                     </view>
@@ -54,10 +76,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="citySearch" destination="jrP-OH-hLB" id="B5Q-6H-xid"/>
+                        <outlet property="loginButton" destination="bFC-RG-K9L" id="OUG-wT-n7d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ir4-MD-dxX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1756" y="-630"/>
+            <point key="canvasLocation" x="948" y="-630.13493253373315"/>
         </scene>
         <!--Detail-->
         <scene sceneID="yUG-lL-AsK">
@@ -148,7 +174,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2498" y="-630"/>
+            <point key="canvasLocation" x="1927" y="-630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="r7l-gg-dq7">
@@ -167,6 +193,9 @@
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="button_my_location.png" width="46" height="46"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
     </inferredMetricsTieBreakers>
