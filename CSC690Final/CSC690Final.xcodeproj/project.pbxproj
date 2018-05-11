@@ -13,6 +13,7 @@
 		6D972CA934846BF38A703994 /* Pods_CSC690FinalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FF27DF914EA1E089D3D57B /* Pods_CSC690FinalUITests.framework */; };
 		DC32C3CD1BBF69BD01F2A8F0 /* Pods_CSC690Final.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89E45726AB72F8AB6FCEA50 /* Pods_CSC690Final.framework */; };
 		E37B92C40318DF2CF52A22F0 /* Pods_CSC690FinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA79665FAE969AE844C5837E /* Pods_CSC690FinalTests.framework */; };
+		F30C206F20A24053002594E1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C206E20A24053002594E1 /* LoginViewController.swift */; };
 		F30D81BD20702827004A6494 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81BC20702827004A6494 /* AppDelegate.swift */; };
 		F30D81BF20702827004A6494 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81BE20702827004A6494 /* MasterViewController.swift */; };
 		F30D81C120702827004A6494 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81C020702827004A6494 /* DetailViewController.swift */; };
@@ -22,6 +23,7 @@
 		F30D81D420702827004A6494 /* CSC690FinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81D320702827004A6494 /* CSC690FinalTests.swift */; };
 		F30D81DF20702828004A6494 /* CSC690FinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81DE20702828004A6494 /* CSC690FinalUITests.swift */; };
 		F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */; };
+		F3D1D2F920A4225800E7D032 /* CitySearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D1D2F820A4225800E7D032 /* CitySearchService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,7 @@
 		8AB2C9E95822CF019309ED24 /* Pods-CSC690Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSC690Final.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSC690Final/Pods-CSC690Final.debug.xcconfig"; sourceTree = "<group>"; };
 		A89E45726AB72F8AB6FCEA50 /* Pods_CSC690Final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FF27DF914EA1E089D3D57B /* Pods_CSC690FinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690FinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30C206E20A24053002594E1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		F30D81B920702827004A6494 /* CSC690Final.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CSC690Final.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30D81BC20702827004A6494 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F30D81BE20702827004A6494 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		F30D81DE20702828004A6494 /* CSC690FinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSC690FinalUITests.swift; sourceTree = "<group>"; };
 		F30D81E020702828004A6494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
+		F3D1D2F820A4225800E7D032 /* CitySearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchService.swift; sourceTree = "<group>"; };
 		FA79665FAE969AE844C5837E /* Pods_CSC690FinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690FinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -150,6 +154,8 @@
 				F30D81BE20702827004A6494 /* MasterViewController.swift */,
 				F30D81C020702827004A6494 /* DetailViewController.swift */,
 				F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */,
+				F3D1D2F820A4225800E7D032 /* CitySearchService.swift */,
+				F30C206E20A24053002594E1 /* LoginViewController.swift */,
 				F30D81C220702827004A6494 /* Main.storyboard */,
 				F30D81C520702827004A6494 /* Assets.xcassets */,
 				F30D81C720702827004A6494 /* LaunchScreen.storyboard */,
@@ -321,6 +327,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CSC690Final/Pods-CSC690Final-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -341,6 +348,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
@@ -465,7 +473,9 @@
 			files = (
 				F30D81C120702827004A6494 /* DetailViewController.swift in Sources */,
 				F30D81BF20702827004A6494 /* MasterViewController.swift in Sources */,
+				F3D1D2F920A4225800E7D032 /* CitySearchService.swift in Sources */,
 				F30D81BD20702827004A6494 /* AppDelegate.swift in Sources */,
+				F30C206F20A24053002594E1 /* LoginViewController.swift in Sources */,
 				F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
