@@ -10,6 +10,8 @@
 		5A553ABA209663AD0053C49F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */; };
 		5A553ABB209663AE0053C49F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */; };
 		5A553ABC209663AE0053C49F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */; };
+		5A984BD420A6B475003653F8 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A984BD320A6B475003653F8 /* Place.swift */; };
+		5A984BD620A6B4E1003653F8 /* PlacesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A984BD520A6B4E1003653F8 /* PlacesController.swift */; };
 		6D972CA934846BF38A703994 /* Pods_CSC690FinalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4FF27DF914EA1E089D3D57B /* Pods_CSC690FinalUITests.framework */; };
 		DC32C3CD1BBF69BD01F2A8F0 /* Pods_CSC690Final.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A89E45726AB72F8AB6FCEA50 /* Pods_CSC690Final.framework */; };
 		E37B92C40318DF2CF52A22F0 /* Pods_CSC690FinalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA79665FAE969AE844C5837E /* Pods_CSC690FinalTests.framework */; };
@@ -49,6 +51,8 @@
 		3B2C87C15598C3A215704816 /* Pods-CSC690Final.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSC690Final.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSC690Final/Pods-CSC690Final.release.xcconfig"; sourceTree = "<group>"; };
 		40D846F56DA8DE97B8649D56 /* Pods-CSC690FinalUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSC690FinalUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSC690FinalUITests/Pods-CSC690FinalUITests.release.xcconfig"; sourceTree = "<group>"; };
 		513B615597A5C9BDB2957739 /* Pods-CSC690FinalTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSC690FinalTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CSC690FinalTests/Pods-CSC690FinalTests.release.xcconfig"; sourceTree = "<group>"; };
+		5A984BD320A6B475003653F8 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		5A984BD520A6B4E1003653F8 /* PlacesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesController.swift; sourceTree = "<group>"; };
 		8AB2C9E95822CF019309ED24 /* Pods-CSC690Final.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CSC690Final.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CSC690Final/Pods-CSC690Final.debug.xcconfig"; sourceTree = "<group>"; };
 		A89E45726AB72F8AB6FCEA50 /* Pods_CSC690Final.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690Final.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4FF27DF914EA1E089D3D57B /* Pods_CSC690FinalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690FinalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A984BD220A6B460003653F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5A984BD320A6B475003653F8 /* Place.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		690477C4AE0B524F01555DA4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +161,7 @@
 		F30D81BB20702827004A6494 /* CSC690Final */ = {
 			isa = PBXGroup;
 			children = (
+				5A984BD220A6B460003653F8 /* Model */,
 				FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */,
 				F30D81BC20702827004A6494 /* AppDelegate.swift */,
 				F30D81BE20702827004A6494 /* AttractionsViewController.swift */,
@@ -159,6 +172,7 @@
 				F30D81C520702827004A6494 /* Assets.xcassets */,
 				F30D81C720702827004A6494 /* LaunchScreen.storyboard */,
 				F30D81CA20702827004A6494 /* Info.plist */,
+				5A984BD520A6B4E1003653F8 /* PlacesController.swift */,
 			);
 			path = CSC690Final;
 			sourceTree = "<group>";
@@ -486,6 +500,8 @@
 				F30D81BD20702827004A6494 /* AppDelegate.swift in Sources */,
 				F39F852B20A62AD700EF1A03 /* RoundedButton.swift in Sources */,
 				F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */,
+				5A984BD620A6B4E1003653F8 /* PlacesController.swift in Sources */,
+				5A984BD420A6B475003653F8 /* Place.swift in Sources */,
 				F39F852D20A62E7100EF1A03 /* ClearNavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

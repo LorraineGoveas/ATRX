@@ -16,7 +16,13 @@ class AttractionsViewController: UITableViewController {
     var filteredObjects = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
     var cityCoordinates: CLLocationCoordinate2D?
+    var places: [Place] = []
+    var cityName: String?
+    let radius = 5000
 
+    
+    var isLoading = false
+    var response : NearbyPlacesResponse?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +38,8 @@ class AttractionsViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        loadPlaces(true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,10 +57,10 @@ class AttractionsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                //let place = places[indexPath.row] as! String
                 
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                //controller.detailItem = place
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -69,24 +77,69 @@ class AttractionsViewController: UITableViewController {
         if isFiltering(){
             return filteredObjects.count
         }else{
-            return objects.count
+            return places.count
         }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let object: NSDate!
+        let place: Place
         
         if isFiltering(){
-            object = filteredObjects[indexPath.row] as! NSDate
+            place = filteredObjects[indexPath.row] as! Place
         }else{
-            object = objects[indexPath.row] as! NSDate
+            place = places[indexPath.row] as! Place
         }
-        cell.textLabel!.text = object.description
+        cell.textLabel!.text = place.getplaceName()
         
         return cell
     }
-
+    func canLoadMore() -> Bool {
+        if isLoading {
+            return false
+        }
+        
+        if let response = self.response {
+            if (!response.canLoadMore()) {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func loadPlaces(_ force:Bool) {
+        
+        if !force {
+            if !canLoadMore() {
+                return
+            }
+        }
+        
+        print("load more")
+        isLoading = true
+        PlacesController.getNearbyPlaces(by: "point_of_interest", coordinates: cityCoordinates!, radius: radius, token: self.response?.nextPageToken, completion: didReceiveResponse)
+    }
+    
+    func didReceiveResponse(response:NearbyPlacesResponse?) -> Void {
+        self.response = response
+        if response?.status == "OK" {
+            
+            if let p = response?.places {
+                places.append(contentsOf: p)
+            }
+            
+            self.tableView?.reloadData()
+        } else {
+            let alert = UIAlertController.init(title: "Error", message: "Unable to fetch nearby places", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction.init(title: "Retry", style: .default, handler: { (action) in
+                self.loadPlaces(true)
+            }))
+            present(alert, animated: true, completion: nil)
+        }
+        isLoading = false
+    }
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
@@ -111,7 +164,7 @@ class AttractionsViewController: UITableViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredObjects = objects.filter({(($0 as! NSDate).description).contains(searchText)})
+        filteredObjects = places.filter({(($0.name as! String).description).contains(searchText)})
         
         tableView.reloadData()
     }
