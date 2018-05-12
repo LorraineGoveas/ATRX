@@ -18,6 +18,7 @@ class CitySearchViewController: UIViewController{
     @IBOutlet weak var citySearch: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     var citySearchCoordinate: CLLocationCoordinate2D?
+    var currentCityName: String?
     
     let gradient: CAGradientLayer = [
         UIColor(hex:"#5f2c82"),
@@ -25,7 +26,7 @@ class CitySearchViewController: UIViewController{
     ].gradient()
     
     let gradient2: CAGradientLayer = [UIColor(hex:"#5f2c82"),UIColor(hex:"#49a09d")].gradient{ gradient in
-        gradient.locations = [0.5, 1.0]
+        gradient.locations = [0.1, 1.0]
         return gradient
     }
     
@@ -47,9 +48,7 @@ class CitySearchViewController: UIViewController{
         authUI?.providers = [FUIGoogleAuth()]
         let authViewController = authUI!.authViewController()
         self.present(authViewController, animated: true, completion: nil)
-        if Auth.auth().currentUser != nil{
-            loginButton.isHidden = true
-        }
+        
     }
     
     
@@ -57,11 +56,16 @@ class CitySearchViewController: UIViewController{
         super.viewDidLoad()
         gradient2.frame = view.frame
         view.layer.insertSublayer(gradient2, at: 0)
+        
+        if Auth.auth().currentUser != nil{
+            loginButton.isHidden = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let attractionViewController = segue.destination as? AttractionsViewController {
-            attractionViewController.cityCoordinates = self.citySearchCoordinate
+            //attractionViewController.cityCoordinates = self.citySearchCoordinate
+            attractionViewController.currentCityName = self.currentCityName
         }
     }
     
@@ -72,7 +76,8 @@ extension CitySearchViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         self.citySearch.text = place.name
-        citySearchCoordinate = place.coordinate
+        currentCityName = place.name
+        //citySearchCoordinate = place.coordinate
         print("Place name: \(place.name)")
         print("Place address: \(String(describing: place.formattedAddress))")
         print("Place attributions: \(String(describing: place.attributions))")

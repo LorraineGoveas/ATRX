@@ -12,10 +12,14 @@ import GoogleMaps
 class AttractionsViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var objects = [Any]()
-    var filteredObjects = [Any]()
+    var filteredObjects = [Place]()
     let searchController = UISearchController(searchResultsController: nil)
-    var cityCoordinates: CLLocationCoordinate2D?
+    //var cityCoordinates: CLLocationCoordinate2D?
+    var places: [Place] = []
+    var currentCityName: String?
+    
+    var isLoading = false
+    var response : QNearbyPlacesResponse?
 
 
     override func viewDidLoad() {
@@ -32,6 +36,7 @@ class AttractionsViewController: UITableViewController {
         searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        loadPlaces(true)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,14 +54,60 @@ class AttractionsViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
-                let object = objects[indexPath.row] as! NSDate
+                //let place = places[indexPath.row] as! Place
                 
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
-                controller.detailItem = object
+                //controller.detailItem = object
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
         }
+    }
+    func canLoadMore() -> Bool {
+        if isLoading {
+            return false
+        }
+        
+        if let response = self.response {
+            if (!response.canLoadMore()) {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    func loadPlaces(_ force:Bool) {
+        
+        if !force {
+            if !canLoadMore() {
+                return
+            }
+        }
+        
+        print("load more")
+        isLoading = true
+        PlaceController.getPlaces(place: currentCityName!, completion: didReceiveResponse)
+    }
+    
+    func didReceiveResponse(response:QNearbyPlacesResponse?) -> Void {
+        self.response = response
+        if response?.status == "OK" {
+            
+            if let p = response?.places {
+                places.append(contentsOf: p)
+            }
+            
+            self.tableView?.reloadData()
+        } else {
+            let alert = UIAlertController.init(title: "Error", message: "Unable to fetch nearby places", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction.init(title: "Retry", style: .default, handler: { (action) in
+                self.loadPlaces(true)
+            }))
+            present(alert, animated: true, completion: nil)
+        }
+        isLoading = false
     }
 
     // MARK: - Table View
@@ -69,20 +120,21 @@ class AttractionsViewController: UITableViewController {
         if isFiltering(){
             return filteredObjects.count
         }else{
-            return objects.count
+            return places.count
         }
+        
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        let object: NSDate!
+        let place: Place?
         
         if isFiltering(){
-            object = filteredObjects[indexPath.row] as! NSDate
+            place = filteredObjects[indexPath.row] as Place
         }else{
-            object = objects[indexPath.row] as! NSDate
+            place = places[indexPath.row] as Place
         }
-        cell.textLabel!.text = object.description
+        cell.textLabel!.text = place?.name
         
         return cell
     }
@@ -94,7 +146,7 @@ class AttractionsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            objects.remove(at: indexPath.row)
+            places.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
@@ -111,7 +163,7 @@ class AttractionsViewController: UITableViewController {
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredObjects = objects.filter({(($0 as! NSDate).description).contains(searchText)})
+        filteredObjects = places.filter({(($0.name as! String).description).contains(searchText)})
         
         tableView.reloadData()
     }

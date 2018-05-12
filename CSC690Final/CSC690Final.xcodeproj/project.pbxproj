@@ -24,6 +24,9 @@
 		F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */; };
 		F39F852B20A62AD700EF1A03 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F852A20A62AD700EF1A03 /* RoundedButton.swift */; };
 		F39F852D20A62E7100EF1A03 /* ClearNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F852C20A62E7100EF1A03 /* ClearNavigationBar.swift */; };
+		F39F853020A6C8D500EF1A03 /* PlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F852F20A6C8D500EF1A03 /* PlaceController.swift */; };
+		F39F853320A6D04600EF1A03 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F853220A6D04600EF1A03 /* Place.swift */; };
+		F39F853520A6D08D00EF1A03 /* QPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F853420A6D08D00EF1A03 /* QPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,9 @@
 		F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
 		F39F852A20A62AD700EF1A03 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F39F852C20A62E7100EF1A03 /* ClearNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavigationBar.swift; sourceTree = "<group>"; };
+		F39F852F20A6C8D500EF1A03 /* PlaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceController.swift; sourceTree = "<group>"; };
+		F39F853220A6D04600EF1A03 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		F39F853420A6D08D00EF1A03 /* QPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QPhoto.swift; sourceTree = "<group>"; };
 		FA79665FAE969AE844C5837E /* Pods_CSC690FinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690FinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -154,6 +160,9 @@
 				F30D81BE20702827004A6494 /* AttractionsViewController.swift */,
 				F30D81C020702827004A6494 /* DetailViewController.swift */,
 				F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */,
+				F39F852F20A6C8D500EF1A03 /* PlaceController.swift */,
+				F39F853220A6D04600EF1A03 /* Place.swift */,
+				F39F853420A6D08D00EF1A03 /* QPhoto.swift */,
 				F39F852E20A62E7600EF1A03 /* CustomUI */,
 				F30D81C220702827004A6494 /* Main.storyboard */,
 				F30D81C520702827004A6494 /* Assets.xcassets */,
@@ -484,9 +493,12 @@
 				F30D81C120702827004A6494 /* DetailViewController.swift in Sources */,
 				F30D81BF20702827004A6494 /* AttractionsViewController.swift in Sources */,
 				F30D81BD20702827004A6494 /* AppDelegate.swift in Sources */,
+				F39F853320A6D04600EF1A03 /* Place.swift in Sources */,
 				F39F852B20A62AD700EF1A03 /* RoundedButton.swift in Sources */,
 				F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */,
+				F39F853020A6C8D500EF1A03 /* PlaceController.swift in Sources */,
 				F39F852D20A62E7100EF1A03 /* ClearNavigationBar.swift in Sources */,
+				F39F853520A6D08D00EF1A03 /* QPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
