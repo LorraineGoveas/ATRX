@@ -7,22 +7,19 @@
 //
 
 import UIKit
+import GoogleMaps
 
-
-class MasterViewController: UITableViewController {
+class AttractionsViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
     var filteredObjects = [Any]()
     let searchController = UISearchController(searchResultsController: nil)
+    var cityCoordinates: CLLocationCoordinate2D?
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-        navigationItem.rightBarButtonItem = addButton
         
         if let split = splitViewController {
             let controllers = split.viewControllers
@@ -45,13 +42,6 @@ class MasterViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-
-    @objc
-    func insertNewObject(_ sender: Any) {
-        objects.insert(NSDate(), at: 0)
-        let indexPath = IndexPath(row: 0, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
     }
 
     // MARK: - Segues
@@ -130,7 +120,7 @@ class MasterViewController: UITableViewController {
 
 }
 
-extension MasterViewController: UISearchResultsUpdating {
+extension AttractionsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentForSearchText(searchController.searchBar.text!)
     }

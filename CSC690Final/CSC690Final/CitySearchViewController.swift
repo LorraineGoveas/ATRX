@@ -11,11 +11,23 @@ import UIKit
 import FirebaseGoogleAuthUI
 import FirebaseAuthUI
 import GooglePlaces
+import Hue
 
 class CitySearchViewController: UIViewController{
     
     @IBOutlet weak var citySearch: UITextField!
     @IBOutlet weak var loginButton: UIButton!
+    var citySearchCoordinate: CLLocationCoordinate2D?
+    
+    let gradient: CAGradientLayer = [
+        UIColor(hex:"#5f2c82"),
+        UIColor(hex:"#49a09d")
+    ].gradient()
+    
+    let gradient2: CAGradientLayer = [UIColor(hex:"#5f2c82"),UIColor(hex:"#49a09d")].gradient{ gradient in
+        gradient.locations = [0.5, 1.0]
+        return gradient
+    }
     
     @IBAction func gpaButton(_ sender: Any) {
         let autocompleteController = GMSAutocompleteViewController()
@@ -43,7 +55,16 @@ class CitySearchViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gradient2.frame = view.frame
+        view.layer.insertSublayer(gradient2, at: 0)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let attractionViewController = segue.destination as? AttractionsViewController {
+            attractionViewController.cityCoordinates = self.citySearchCoordinate
+        }
+    }
+    
 }
 
 extension CitySearchViewController: GMSAutocompleteViewControllerDelegate {
@@ -51,10 +72,12 @@ extension CitySearchViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         self.citySearch.text = place.name
+        citySearchCoordinate = place.coordinate
         print("Place name: \(place.name)")
         print("Place address: \(String(describing: place.formattedAddress))")
         print("Place attributions: \(String(describing: place.attributions))")
         dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "chosenCitySegue", sender: nil)
     }
     
     
