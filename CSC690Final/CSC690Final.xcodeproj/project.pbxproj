@@ -17,7 +17,6 @@
 		F30D81BF20702827004A6494 /* AttractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81BE20702827004A6494 /* AttractionsViewController.swift */; };
 		F30D81C120702827004A6494 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81C020702827004A6494 /* DetailViewController.swift */; };
 		F30D81C420702827004A6494 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30D81C220702827004A6494 /* Main.storyboard */; };
-		F30D81C620702827004A6494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F30D81C520702827004A6494 /* Assets.xcassets */; };
 		F30D81C920702827004A6494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30D81C720702827004A6494 /* LaunchScreen.storyboard */; };
 		F30D81D420702827004A6494 /* CSC690FinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81D320702827004A6494 /* CSC690FinalTests.swift */; };
 		F30D81DF20702828004A6494 /* CSC690FinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81DE20702828004A6494 /* CSC690FinalUITests.swift */; };
@@ -27,6 +26,8 @@
 		F39F853020A6C8D500EF1A03 /* PlaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F852F20A6C8D500EF1A03 /* PlaceController.swift */; };
 		F39F853320A6D04600EF1A03 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F853220A6D04600EF1A03 /* Place.swift */; };
 		F39F853520A6D08D00EF1A03 /* QPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F853420A6D08D00EF1A03 /* QPhoto.swift */; };
+		FD49C5AD20A7ADFE00B08736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD49C5AC20A7ADFE00B08736 /* Assets.xcassets */; };
+		FD49C5B120A7AE2700B08736 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = FD49C5AF20A7AE2700B08736 /* Contents.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,6 @@
 		F30D81BE20702827004A6494 /* AttractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionsViewController.swift; sourceTree = "<group>"; };
 		F30D81C020702827004A6494 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F30D81C320702827004A6494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F30D81C520702827004A6494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F30D81C820702827004A6494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F30D81CA20702827004A6494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F30D81CF20702827004A6494 /* CSC690FinalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSC690FinalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +77,8 @@
 		F39F853420A6D08D00EF1A03 /* QPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QPhoto.swift; sourceTree = "<group>"; };
 		FA79665FAE969AE844C5837E /* Pods_CSC690FinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690FinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FD49C5AC20A7ADFE00B08736 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FD49C5AF20A7AE2700B08736 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = ../../../../../Assets.xcassets/Contents.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,9 +167,10 @@
 				F39F853420A6D08D00EF1A03 /* QPhoto.swift */,
 				F39F852E20A62E7600EF1A03 /* CustomUI */,
 				F30D81C220702827004A6494 /* Main.storyboard */,
-				F30D81C520702827004A6494 /* Assets.xcassets */,
 				F30D81C720702827004A6494 /* LaunchScreen.storyboard */,
 				F30D81CA20702827004A6494 /* Info.plist */,
+				FD49C5AC20A7ADFE00B08736 /* Assets.xcassets */,
+				FD49C5AF20A7AE2700B08736 /* Contents.json */,
 			);
 			path = CSC690Final;
 			sourceTree = "<group>";
@@ -313,8 +316,9 @@
 			files = (
 				F30D81C920702827004A6494 /* LaunchScreen.storyboard in Resources */,
 				5A553ABA209663AD0053C49F /* GoogleService-Info.plist in Resources */,
-				F30D81C620702827004A6494 /* Assets.xcassets in Resources */,
+				FD49C5AD20A7ADFE00B08736 /* Assets.xcassets in Resources */,
 				F30D81C420702827004A6494 /* Main.storyboard in Resources */,
+				FD49C5B120A7AE2700B08736 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +349,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CSC690Final/Pods-CSC690Final-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -367,6 +372,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",

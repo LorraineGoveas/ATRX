@@ -11,6 +11,7 @@ target 'CSC690Final' do
   pod 'GooglePlacePicker'
   pod 'GoogleMaps'
   pod 'Alamofire'
+  pod 'AlamofireImage'
   pod 'Hue'
   
   # Pods for CSC690Final
