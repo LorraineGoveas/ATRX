@@ -21,6 +21,10 @@ private let openNowKey = "open_now"
 private let vicinityKey = "vicinity"
 private let typesKey = "types"
 private let photosKey = "photos"
+private let phoneNumberKey = "formatted_phone_number"
+private let addressKey = "formatted_address"
+private let ratingKey = "rating"
+private let googleMapsUrlKey = "url"
 
 class Place: NSObject {
     
@@ -31,6 +35,10 @@ class Place: NSObject {
     var vicinity: String?
     var isOpen: Bool?
     var types: [String]?
+    var address: String?
+    var phoneNumber: String?
+    var rating: String?
+    var googleMapsUrl: String?
     
     var details: [String : Any]?
     
@@ -49,6 +57,16 @@ class Place: NSObject {
         
         // name
         name = placeInfo[nameKey] as? String
+    
+        // formattted address
+        address = placeInfo[addressKey] as? String
+    
+        // formatted phone number
+        phoneNumber = placeInfo[phoneNumberKey] as? String
+    
+        googleMapsUrl = placeInfo[googleMapsUrlKey] as? String
+        
+        rating = placeInfo[ratingKey] as? String
         
         // opening hours
         if let oh = placeInfo[openingHoursKey] as? [String:Any] {
