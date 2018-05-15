@@ -74,7 +74,8 @@ class DetailViewController: UIViewController {
     
     @objc func callPhone(sender: UITapGestureRecognizer){
         
-        let formattedPhoneNumber: String? = (placePhoneNumberLabel.text?.trimmingCharacters(in:CharacterSet.decimalDigits.inverted))
+        let formattedPhoneNumber: String? = placePhoneNumberLabel.text?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+    
         
         if let phoneCallURL:URL = URL(string: "tel://\(formattedPhoneNumber)") {
             let application:UIApplication = UIApplication.shared
