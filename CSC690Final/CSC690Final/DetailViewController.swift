@@ -17,9 +17,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var phoneIcon: UIImageView!
     @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var placeImage: UIImageView!
+    @IBOutlet weak var timeIcon: UIImageView!
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeAddressLabel: UILabel!
     @IBOutlet weak var placePhoneNumberLabel: UILabel!
+    @IBOutlet weak var placeHoursLabel: UILabel!
     
     var placeItem: Place?
     var isLoading = false
@@ -33,11 +35,13 @@ class DetailViewController: UIViewController {
     func didReceiveResponse(response: Place?) -> Void {
         placeNameLabel.text = response?.name
         placeAddressLabel.text = response?.address
-        placePhoneNumberLabel.text = response?.phoneNumber
-        
+        placePhoneNumberLabel.text = ((response?.details!["formatted_phone_number"] ?? "Not Available" ) as! String)
         if let image = response?.photos?.first?.getPhotoURL(maxWidth: 600) {
             placeImage.af_setImage(withURL: image)
         }
+    
+        placeHoursLabel.text = response?.openHours
+      
     }
     
     override func viewDidLoad() {
@@ -54,6 +58,9 @@ class DetailViewController: UIViewController {
         
         locationIcon.image = locationIcon.image!.withRenderingMode(.alwaysTemplate)
         locationIcon.tintColor = UIColor.white
+        
+        timeIcon.image = timeIcon.image!.withRenderingMode(.alwaysTemplate)
+        timeIcon.tintColor = UIColor.white
     }
     
 

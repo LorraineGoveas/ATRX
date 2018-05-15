@@ -62,7 +62,7 @@ class AttractionsViewController: UITableViewController {
         if segue.identifier == "showDetail" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let place = places[indexPath.row]
-                print("TEST PLACE DETAILS:", place.placeId );
+                print("TEST PLACE DETAILS:", place.name );
                 
                 let controller = (segue.destination as! UINavigationController).topViewController as! DetailViewController
                 controller.placeItem = place

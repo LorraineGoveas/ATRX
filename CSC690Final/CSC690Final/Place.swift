@@ -39,6 +39,7 @@ class Place: NSObject {
     var phoneNumber: String?
     var rating: String?
     var googleMapsUrl: String?
+    var openHours: String?
     
     var details: [String : Any]?
     
@@ -63,7 +64,7 @@ class Place: NSObject {
     
         // formatted phone number
         phoneNumber = placeInfo[phoneNumberKey] as? String
-    
+        
         googleMapsUrl = placeInfo[googleMapsUrlKey] as? String
         
         rating = placeInfo[ratingKey] as? String
@@ -80,6 +81,11 @@ class Place: NSObject {
         
         // types
         types = placeInfo[typesKey] as? [String]
+        
+        
+        if let isOpen = isOpen {
+            openHours = (isOpen ? "OPEN NOW" : "CLOSED NOW")
+        }
         
         // photos
         photos = [QPhoto]()
