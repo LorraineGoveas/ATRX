@@ -50,6 +50,16 @@ class DetailViewController: UIViewController {
         configureView()
         setUpGradient(top: UIColor(hex:"#5f2c82"),bottom: UIColor(hex:"#49a09d"))
         colorIcons()
+        setupClickableLabels()
+    }
+    
+    func setupClickableLabels(){
+        let addressTap = UITapGestureRecognizer(target: self, action: #selector(directions))
+        placeAddressLabel.addGestureRecognizer(addressTap)
+        
+        let phoneTap = UITapGestureRecognizer(target: self, action: #selector(callPhone))
+        placePhoneNumberLabel.addGestureRecognizer(phoneTap)
+        
     }
     
     func colorIcons(){
@@ -69,9 +79,28 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    @IBAction func directionsButton(_ sender: Any) {
+    @objc func callPhone(sender: UITapGestureRecognizer){
         
+        let formattedPhoneNumber: String? = (placePhoneNumberLabel.text?.trimmingCharacters(in:CharacterSet.decimalDigits.inverted))
+        
+        if let phoneCallURL:URL = URL(string: "tel://\(formattedPhoneNumber)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                let alertController = UIAlertController(title: "MyApp", message: "Are you sure you want to call \n\(formattedPhoneNumber)?", preferredStyle: .alert)
+                let yesPressed = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
+                    application.open(phoneCallURL, options: [:], completionHandler: nil)
+                })
+                let noPressed = UIAlertAction(title: "No", style: .default, handler: { (action) in
+                    
+                })
+                alertController.addAction(yesPressed)
+                alertController.addAction(noPressed)
+                present(alertController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @objc func directions(sender: UITapGestureRecognizer) {
         let regionDistance: CLLocationDistance = 1000
         let regionSpan = MKCoordinateRegionMakeWithDistance((placeItem?.location)!, regionDistance, regionDistance)
         
