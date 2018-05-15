@@ -81,12 +81,15 @@ class DetailViewController: UIViewController {
     
     @objc func callPhone(sender: UITapGestureRecognizer){
         
-        let formattedPhoneNumber: String? = (placePhoneNumberLabel.text?.trimmingCharacters(in:CharacterSet.decimalDigits.inverted))
+        let phoneNumber = placePhoneNumberLabel.text
         
-        if let phoneCallURL:URL = URL(string: "tel://\(formattedPhoneNumber)") {
+        let formattedPhoneNumber: String? = (phoneNumber?.filter { "01234567890.".contains($0) })
+        print("PHONE NUMBER", formattedPhoneNumber)
+        
+        if let phoneCallURL:URL = URL(string: "tel://\(String(describing: formattedPhoneNumber))") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
-                let alertController = UIAlertController(title: "MyApp", message: "Are you sure you want to call \n\(formattedPhoneNumber)?", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "MyApp", message: "Are you sure you want to call \n\(String(describing: formattedPhoneNumber))?", preferredStyle: .alert)
                 let yesPressed = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
                     application.open(phoneCallURL, options: [:], completionHandler: nil)
                 })
@@ -112,6 +115,17 @@ class DetailViewController: UIViewController {
         mapItem.openInMaps(launchOptions: options)
     }
     
+    @IBAction func directionsButton(_ sender: Any) {
+        let regionDistance: CLLocationDistance = 1000
+        let regionSpan = MKCoordinateRegionMakeWithDistance((placeItem?.location)!, regionDistance, regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placeMark = MKPlacemark(coordinate: (placeItem?.location)!)
+        let mapItem = MKMapItem(placemark: placeMark)
+        mapItem.name = placeItem?.name
+        mapItem.openInMaps(launchOptions: options)
+    }
     var detailItem: NSDate? {
         didSet {
             // Update the view.
