@@ -17,5 +17,7 @@ class ClearNavigationBar: UINavigationBar{
         shadowImage = UIImage()
         isTranslucent = true
         super.superview?.backgroundColor = .clear
+        self.tintColor = UIColor.white
+        self.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
     }
 }

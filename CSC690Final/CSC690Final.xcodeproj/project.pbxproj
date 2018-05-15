@@ -20,6 +20,7 @@
 		F30D81C920702827004A6494 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F30D81C720702827004A6494 /* LaunchScreen.storyboard */; };
 		F30D81D420702827004A6494 /* CSC690FinalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81D320702827004A6494 /* CSC690FinalTests.swift */; };
 		F30D81DF20702828004A6494 /* CSC690FinalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30D81DE20702828004A6494 /* CSC690FinalUITests.swift */; };
+		F365E67C20AA53F4002C2931 /* AttractionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F365E67B20AA53F4002C2931 /* AttractionCell.swift */; };
 		F36FE71F2082CBC8007C896A /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */; };
 		F39F852B20A62AD700EF1A03 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F852A20A62AD700EF1A03 /* RoundedButton.swift */; };
 		F39F852D20A62E7100EF1A03 /* ClearNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F852C20A62E7100EF1A03 /* ClearNavigationBar.swift */; };
@@ -27,7 +28,6 @@
 		F39F853320A6D04600EF1A03 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F853220A6D04600EF1A03 /* Place.swift */; };
 		F39F853520A6D08D00EF1A03 /* QPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39F853420A6D08D00EF1A03 /* QPhoto.swift */; };
 		FD49C5AD20A7ADFE00B08736 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD49C5AC20A7ADFE00B08736 /* Assets.xcassets */; };
-		FD49C5B120A7AE2700B08736 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = FD49C5AF20A7AE2700B08736 /* Contents.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +69,7 @@
 		F30D81DA20702827004A6494 /* CSC690FinalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CSC690FinalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30D81DE20702828004A6494 /* CSC690FinalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSC690FinalUITests.swift; sourceTree = "<group>"; };
 		F30D81E020702828004A6494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F365E67B20AA53F4002C2931 /* AttractionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionCell.swift; sourceTree = "<group>"; };
 		F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
 		F39F852A20A62AD700EF1A03 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		F39F852C20A62E7100EF1A03 /* ClearNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearNavigationBar.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		FA79665FAE969AE844C5837E /* Pods_CSC690FinalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CSC690FinalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FD49C5AC20A7ADFE00B08736 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FD49C5AF20A7AE2700B08736 /* Contents.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Contents.json; path = ../../../../../Assets.xcassets/Contents.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +170,6 @@
 				F30D81C720702827004A6494 /* LaunchScreen.storyboard */,
 				F30D81CA20702827004A6494 /* Info.plist */,
 				FD49C5AC20A7ADFE00B08736 /* Assets.xcassets */,
-				FD49C5AF20A7AE2700B08736 /* Contents.json */,
 			);
 			path = CSC690Final;
 			sourceTree = "<group>";
@@ -198,6 +197,7 @@
 			children = (
 				F39F852A20A62AD700EF1A03 /* RoundedButton.swift */,
 				F39F852C20A62E7100EF1A03 /* ClearNavigationBar.swift */,
+				F365E67B20AA53F4002C2931 /* AttractionCell.swift */,
 			);
 			path = CustomUI;
 			sourceTree = "<group>";
@@ -318,7 +318,6 @@
 				5A553ABA209663AD0053C49F /* GoogleService-Info.plist in Resources */,
 				FD49C5AD20A7ADFE00B08736 /* Assets.xcassets in Resources */,
 				F30D81C420702827004A6494 /* Main.storyboard in Resources */,
-				FD49C5B120A7AE2700B08736 /* Contents.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +495,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F365E67C20AA53F4002C2931 /* AttractionCell.swift in Sources */,
 				F30D81C120702827004A6494 /* DetailViewController.swift in Sources */,
 				F30D81BF20702827004A6494 /* AttractionsViewController.swift in Sources */,
 				F30D81BD20702827004A6494 /* AppDelegate.swift in Sources */,

@@ -8,13 +8,13 @@
 
 import UIKit
 import GoogleMaps
+import Hue
 
 class AttractionsViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var filteredObjects = [Place]()
     let searchController = UISearchController(searchResultsController: nil)
-    //var cityCoordinates: CLLocationCoordinate2D?
     var places: [Place] = []
     var currentCityName: String?
     
@@ -30,15 +30,22 @@ class AttractionsViewController: UITableViewController {
             detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
         
-        // Setup the Search Controller
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
+        setupSearchController()
+        applyGradient()
         loadPlaces(true)
     }
 
+    func setupSearchController(){
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search"
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.barStyle = .black
+
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
@@ -127,32 +134,27 @@ class AttractionsViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! AttractionCell
         let place: Place?
+        
+    
         
         if isFiltering(){
             place = filteredObjects[indexPath.row] as Place
         }else{
             place = places[indexPath.row] as Place
         }
-        cell.textLabel!.text = place?.name
+        
+        cell.label.text = place?.name
         
         return cell
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return false
     }
-
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            places.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-        }
-    }
+    
     
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
@@ -165,12 +167,8 @@ class AttractionsViewController: UITableViewController {
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         filteredObjects = places.filter({(($0.name as! String).description).contains(searchText)})
-        
         tableView.reloadData()
     }
-    
-
-
 }
 
 extension AttractionsViewController: UISearchResultsUpdating {
@@ -178,4 +176,18 @@ extension AttractionsViewController: UISearchResultsUpdating {
         filterContentForSearchText(searchController.searchBar.text!)
     }
 }
+
+extension AttractionsViewController{
+    func applyGradient(){
+        let gradient: CAGradientLayer = [UIColor(hex:"#49a09d"),UIColor(hex:"#5f2c82")].gradient{ gradient in
+            gradient.locations = [0.5, 1.0]
+            return gradient
+        }
+        gradient.frame = tableView.bounds
+        let backgroundView = UIView(frame: tableView.bounds)
+        backgroundView.layer.insertSublayer(gradient, at: 0)
+        tableView.backgroundView = backgroundView
+    }
+}
+
 

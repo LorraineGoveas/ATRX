@@ -9,10 +9,13 @@
 import UIKit
 import MapKit
 import AlamofireImage
+import Hue
 
 class DetailViewController: UIViewController {
 
 
+    @IBOutlet weak var phoneIcon: UIImageView!
+    @IBOutlet weak var locationIcon: UIImageView!
     @IBOutlet weak var placeImage: UIImageView!
     @IBOutlet weak var placeNameLabel: UILabel!
     @IBOutlet weak var placeAddressLabel: UILabel!
@@ -22,7 +25,9 @@ class DetailViewController: UIViewController {
     var isLoading = false
     
     func configureView() {
-        PlaceController.getPlaceDetails(place: placeItem!, completion: didReceiveResponse)
+        if let place = placeItem{
+            PlaceController.getPlaceDetails(place: place, completion: didReceiveResponse)
+        }
     }
 
     func didReceiveResponse(response: Place?) -> Void {
@@ -39,7 +44,18 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
+        setUpGradient(top: UIColor(hex:"#5f2c82"),bottom: UIColor(hex:"#49a09d"))
+        colorIcons()
     }
+    
+    func colorIcons(){
+        phoneIcon.image = phoneIcon.image!.withRenderingMode(.alwaysTemplate)
+        phoneIcon.tintColor = UIColor.white
+        
+        locationIcon.image = locationIcon.image!.withRenderingMode(.alwaysTemplate)
+        locationIcon.tintColor = UIColor.white
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
