@@ -83,24 +83,12 @@ class DetailViewController: UIViewController {
         
         let phoneNumber = placePhoneNumberLabel.text
         
-        let formattedPhoneNumber: String? = (phoneNumber?.filter { "01234567890.".contains($0) })
-        print("PHONE NUMBER", formattedPhoneNumber)
-        
-        if let phoneCallURL:URL = URL(string: "tel://\(String(describing: formattedPhoneNumber))") {
-            let application:UIApplication = UIApplication.shared
-            if (application.canOpenURL(phoneCallURL)) {
-                let alertController = UIAlertController(title: "MyApp", message: "Are you sure you want to call \n\(String(describing: formattedPhoneNumber))?", preferredStyle: .alert)
-                let yesPressed = UIAlertAction(title: "Yes", style: .default, handler: { (action) in
-                    application.open(phoneCallURL, options: [:], completionHandler: nil)
-                })
-                let noPressed = UIAlertAction(title: "No", style: .default, handler: { (action) in
-                    
-                })
-                alertController.addAction(yesPressed)
-                alertController.addAction(noPressed)
-                present(alertController, animated: true, completion: nil)
+        if let formattedPhoneNumber = phoneNumber?.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(){
+            if let phoneCallURL: URL = URL(string: "tel://\(formattedPhoneNumber)"){
+                UIApplication.shared.open(phoneCallURL)
             }
         }
+        
     }
     
     @objc func directions(sender: UITapGestureRecognizer) {
