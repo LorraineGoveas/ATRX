@@ -23,6 +23,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var placePhoneNumberLabel: UILabel!
     @IBOutlet weak var placeHoursLabel: UILabel!
     
+    var website: String?
     var placeItem: Place?
     var isLoading = false
     
@@ -36,6 +37,9 @@ class DetailViewController: UIViewController {
         placeNameLabel.text = response?.name
         placeAddressLabel.text = response?.address
         placePhoneNumberLabel.text = ((response?.details!["formatted_phone_number"] ?? "Not Available" ) as! String)
+        website = ((response?.details!["website"] ?? "Not Available" ) as! String)
+        
+        
         if let image = response?.photos?.first?.getPhotoURL(maxWidth: 600) {
             placeImage.af_setImage(withURL: image)
         }
@@ -103,17 +107,19 @@ class DetailViewController: UIViewController {
         mapItem.openInMaps(launchOptions: options)
     }
     
-    @IBAction func directionsButton(_ sender: Any) {
-        let regionDistance: CLLocationDistance = 1000
-        let regionSpan = MKCoordinateRegionMakeWithDistance((placeItem?.location)!, regionDistance, regionDistance)
-        
-        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
-        
-        let placeMark = MKPlacemark(coordinate: (placeItem?.location)!)
-        let mapItem = MKMapItem(placemark: placeMark)
-        mapItem.name = placeItem?.name
-        mapItem.openInMaps(launchOptions: options)
+    @IBAction func websiteButton(_ sender: Any) {
+        if let site = website{
+            if let url = URL(string: site){
+                UIApplication.shared.open(url)
+            }
+        }else{
+            let alert = UIAlertController.init(title: "Error", message: "Unable to access website", preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction.init(title: "Retry", style: .default, handler: nil))
+            present(alert, animated: true, completion: nil)
+        }
     }
+    
     var detailItem: NSDate? {
         didSet {
             // Update the view.

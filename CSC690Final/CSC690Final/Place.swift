@@ -25,6 +25,8 @@ private let phoneNumberKey = "formatted_phone_number"
 private let addressKey = "formatted_address"
 private let ratingKey = "rating"
 private let googleMapsUrlKey = "url"
+private let websiteKey = "website"
+private let hoursKey = "weekday_text"
 
 class Place: NSObject {
     
@@ -40,6 +42,8 @@ class Place: NSObject {
     var rating: String?
     var googleMapsUrl: String?
     var openHours: String?
+    var website: String?
+    var hours: [String]?
     
     var details: [String : Any]?
     
@@ -65,8 +69,10 @@ class Place: NSObject {
         // formatted phone number
         phoneNumber = placeInfo[phoneNumberKey] as? String
         
+        //googleMapsUrl
         googleMapsUrl = placeInfo[googleMapsUrlKey] as? String
         
+        //rating
         rating = placeInfo[ratingKey] as? String
         
         // opening hours
@@ -81,6 +87,7 @@ class Place: NSObject {
         
         // types
         types = placeInfo[typesKey] as? [String]
+        
         
         
         if let isOpen = isOpen {
@@ -115,6 +122,7 @@ class Place: NSObject {
         if let isOpen = isOpen {
             s.append(isOpen ? "OPEN NOW" : "CLOSED NOW")
         }
+        
         
         return s.joined(separator: "\n")
     }
