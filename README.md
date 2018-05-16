@@ -1,6 +1,9 @@
 # CSC690-Atrx
-iOS app for attractions to see in a city.
 
+## Description
+ATRX is an IOS app where a user can search for a city and see the top tourist attractions for that city. A user can click on an attraction to see more details such as a picture, phone number and address.
+
+This app was created by three students for the CSC 690  class at SFSU
 
 ## Team
 
