@@ -14,7 +14,7 @@ This app was created by three students for the CSC 690  class at SFSU
 ### Abigail Chin <a href="https://github.com/michinchin"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="20"/></a>
 
 ## Demo 
-<img src="assets/ATRX.gif" width="270" />
+<img src="assets/ATRX.mov" width="270" />
 
 ## Screenshots
 
