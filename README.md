@@ -1,6 +1,9 @@
 # CSC690-Atrx
-iOS app for attractions to see in a city.
 
+## Description
+ATRX is an IOS app where a user can search for a city and see the top tourist attractions for that city. A user can click on an attraction to see more details such as a picture, phone number and address.
+
+This app was created by three students for the CSC 690  class at SFSU
 
 ## Team
 
@@ -10,10 +13,21 @@ iOS app for attractions to see in a city.
 
 ### Abigail Chin <a href="https://github.com/michinchin"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width="20"/></a>
 
-## Wireframes
+## Demo 
+<img src="assets/ATRX.gif" width="270" />
 
-<img src="assets/wireframes.png" width="600" height="400" />
-<img src = "assets/atrxwireframe1.PNG" width="372" height="496"/> <img src = "assets/ATRXWIREFRAME2.PNG" width="372" height="496"/> <img src = "assets/atrxwireframe3.PNG" width="372" height="496"/>
+## Screenshots
+
+<div style={{display: flex; flex-direction: row}}>
+  <img src="assets/screen-1.png" width="270" />
+  <img src="assets/screen-2.png" width="270" />
+  <img src="assets/screen-3.png" width="270" />
+</div>
+<div style={{display: flex; flex-direction: row}}>
+  <img src="assets/screen-4.png" width="270" />
+  <img src="assets/screen-5.png" width="270" />
+  <!-- <img src="assets/screen-1.png" width="270" /> -->
+</div>
 
 
 ## Features
@@ -32,16 +46,16 @@ Sukhjit:
 - attraction report (20 hours)
 
 Lorraine: 
-- search by attraction and upvote/downvote system (20 hours)
+- backend (20 hours)
 
 Abigail:
 - login/profile, search by city (20 hours)
 
 #### APIs
 - Google Places
-- Google Maps/Apple Maps
+- Google Maps POI
+- Apple Maps
 - Firebase
-- Yelp 
 
 ## Getting Started 
 
