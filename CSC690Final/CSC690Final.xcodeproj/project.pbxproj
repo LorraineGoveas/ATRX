@@ -159,12 +159,8 @@
 			children = (
 				FD22840D2082D24E002CB8A1 /* GoogleService-Info.plist */,
 				F30D81BC20702827004A6494 /* AppDelegate.swift */,
-				F30D81BE20702827004A6494 /* AttractionsViewController.swift */,
-				F30D81C020702827004A6494 /* DetailViewController.swift */,
-				F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */,
-				F39F852F20A6C8D500EF1A03 /* PlaceController.swift */,
-				F39F853220A6D04600EF1A03 /* Place.swift */,
-				F39F853420A6D08D00EF1A03 /* QPhoto.swift */,
+				F328607620AE459300D69BCF /* ViewControllers */,
+				F328607720AE45B000D69BCF /* Model */,
 				F39F852E20A62E7600EF1A03 /* CustomUI */,
 				F30D81C220702827004A6494 /* Main.storyboard */,
 				F30D81C720702827004A6494 /* LaunchScreen.storyboard */,
@@ -190,6 +186,26 @@
 				F30D81E020702828004A6494 /* Info.plist */,
 			);
 			path = CSC690FinalUITests;
+			sourceTree = "<group>";
+		};
+		F328607620AE459300D69BCF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F30D81BE20702827004A6494 /* AttractionsViewController.swift */,
+				F30D81C020702827004A6494 /* DetailViewController.swift */,
+				F36FE71E2082CBC8007C896A /* CitySearchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F328607720AE45B000D69BCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F39F853420A6D08D00EF1A03 /* QPhoto.swift */,
+				F39F852F20A6C8D500EF1A03 /* PlaceController.swift */,
+				F39F853220A6D04600EF1A03 /* Place.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		F39F852E20A62E7600EF1A03 /* CustomUI */ = {

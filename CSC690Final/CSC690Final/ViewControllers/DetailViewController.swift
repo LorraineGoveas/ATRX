@@ -113,10 +113,9 @@ class DetailViewController: UIViewController {
                 UIApplication.shared.open(url)
             }
         }else{
-            let alert = UIAlertController.init(title: "Error", message: "Unable to access website", preferredStyle: .alert)
-            alert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction.init(title: "Retry", style: .default, handler: nil))
-            present(alert, animated: true, completion: nil)
+            let webAlert = UIAlertController.init(title: "Error", message: "Unable to access website", preferredStyle: .alert)
+            webAlert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil))
+            present(webAlert, animated: true, completion: nil)
         }
     }
     

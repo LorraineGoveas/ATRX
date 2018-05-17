@@ -16,7 +16,7 @@ import GooglePlaces
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-    static let googlePlacesAPIKey: String = "AIzaSyDegWVwOdgfvZJ5Y3naNhq_2b9NEIr7BNo"
+    static let googlePlacesAPIKey: String = "AIzaSyAgVVBtNZ61SsAO-I0vZKhIPWgvEgyTt04"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
